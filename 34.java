@@ -1,4 +1,4 @@
-//24. Create a class named Shape.Inside that class create three subclasses named Circle,Rectangle,Triangle and
+//34. Create a class named Shape.Inside that class create three subclasses named Circle,Rectangle,Triangle and
 // create two member functions named draw() and erase().Create using polymorphism concepts.
 
 // Base class Shape
