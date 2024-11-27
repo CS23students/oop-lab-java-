@@ -1,4 +1,4 @@
-// Develop the internal marks calculation system based on the attendence percentage using Java get the students name, register number, total number of working days in the semester and number of days present.
+// 5. Develop the internal marks calculation system based on the attendence percentage using Java get the students name, register number, total number of working days in the semester and number of days present.
 // Calculate the attendence percentage of the students and answer attendance Mark based on the following conditions
 // Attendence percentage>90-5 marks
 // Attendence percentage>80 and <90-4 marks
