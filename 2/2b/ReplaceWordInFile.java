@@ -1,3 +1,5 @@
+// 2-b. Replace the 'WORD1' by 'WORD2' in file 1 without creating a file  and display the no. Of replacement.
+
 import java.io.*;
 import java.util.Scanner;
 
