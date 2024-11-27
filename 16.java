@@ -34,6 +34,11 @@ class ArrayOperations<T> {
         }
     }
 
+    // Method to get the size of the array
+    public int size() {
+        return array.size();
+    }
+
     // Method to display the array
     public void displayArray() {
         if (array.isEmpty()) {
@@ -44,18 +49,16 @@ class ArrayOperations<T> {
     }
 }
 
-public class GenericArrayOperations {
+public class Main {
     public static void main(String[] args) {
         ArrayOperations<Integer> arrayOps = new ArrayOperations<>();
         Scanner sc = new Scanner(System.in);
-
             System.out.println("1. Add Element at Beginning");
             System.out.println("2. Add Element in Middle");
             System.out.println("3. Add Element at End");
             System.out.println("4. Delete Element");
             System.out.println("5. Display Array");
             System.out.println("6. Exit");
-
         while (true) {
             System.out.println("\nChoose an operation:");
             int choice = sc.nextInt();
