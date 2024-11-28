@@ -86,3 +86,15 @@ public class FileOperations {
         }
     }
 }
+
+
+
+// OUTPUT:
+// Choose an option:
+// a. Read and display the contents of two files (F1 and F2).
+// b. Concatenate the contents of two files (F1 and F2) and write to F3.
+// Enter your choice (a/b): b
+// Enter the name of file F1: F1.txt
+// Enter the name of file F2: F2.txt
+// Enter the name of file F3 (to store concatenated data): F3.txt
+// Contents of F1.txt and F2.txt have been concatenated into F3.txt
