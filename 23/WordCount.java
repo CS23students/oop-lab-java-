@@ -1,3 +1,5 @@
+//23. Create a java program WordCount that displays the number of words in one or more files.Each file should run in a separate thread
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -55,3 +57,13 @@ public class WordCount {
         scanner.close();
     }
 }
+
+
+
+
+
+// OUTPUT:
+// Enter the number of files: 1
+// Enter the name of file 1: file1.txt
+
+// File: file1.txt | Word Count: 2
