@@ -1,18 +1,6 @@
-10.Design a Calculator using event driving programming paradigm of java with decimal manipulation
+// 10.Design a Calculator using event driving programming paradigm of java with decimal manipulation
 
 
-
-
-import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 
 public class CalculatorApp extends Application {
 
@@ -47,7 +35,8 @@ public class CalculatorApp extends Application {
                 "7", "8", "9", "/",
                 "4", "5", "6", "*",
                 "1", "2", "3", "-",
-                "C", "0", "=", "+"};
+                "C", "0", ".", "=",
+                "+"};
 
         // Create buttons and add event handling
         int row = 1;
@@ -98,6 +87,11 @@ public class CalculatorApp extends Application {
                     firstOperand = Double.parseDouble(display.getText());
                     operator = label;
                     isOperatorPressed = true;
+                }
+                break;
+            case ".": // Add a decimal point
+                if (!display.getText().contains(".")) {
+                    display.appendText(".");
                 }
                 break;
             default: // Append numbers to the display
