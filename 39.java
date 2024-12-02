@@ -8,13 +8,15 @@
 // Class to represent a consumer's phone bill
 class PhoneBill {
     String consumerName;  // Consumer's name
+    String consumerEmail;
     int consumerNumber;   // Consumer's number
     int noOfCalls;        // Number of calls made
     double billAmount;    // Total bill amount
 
     // Constructor to initialize consumer details
-    public PhoneBill(String consumerName, int consumerNumber, int noOfCalls) {
+    public PhoneBill(String consumerName,  String consumerEmail, int consumerNumber, int noOfCalls) {
         this.consumerName = consumerName;
+        this.consumerEmail=consumerEmail;
         this.consumerNumber = consumerNumber;
         this.noOfCalls = noOfCalls;
         this.billAmount = calculateBill(noOfCalls);
@@ -40,6 +42,7 @@ class PhoneBill {
     // Method to display the phone bill details
     public void displayBill() {
         System.out.println("Consumer Name: " + consumerName);
+        System.out.println("Consumer Email: " + consumerEmail);
         System.out.println("Consumer Number: " + consumerNumber);
         System.out.println("Number of Calls: " + noOfCalls);
         System.out.println("Total Bill Amount: Rs. " + billAmount);
@@ -55,6 +58,9 @@ public class PhoneBillCalculator {
         System.out.print("Enter Consumer Name: ");
         String name = sc.nextLine();
 
+        System.out.print("Enter Consumer Email: ");
+        String email = sc.nextLine();
+
         System.out.print("Enter Consumer Number: ");
         int number = sc.nextInt();
 
@@ -62,7 +68,7 @@ public class PhoneBillCalculator {
         int calls = sc.nextInt();
 
         // Create PhoneBill object and calculate the bill
-        PhoneBill phoneBill = new PhoneBill(name, number, calls);
+        PhoneBill phoneBill = new PhoneBill(name, email, number, calls);
 
         // Display the phone bill details
         phoneBill.displayBill();
