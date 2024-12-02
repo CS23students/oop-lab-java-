@@ -12,29 +12,26 @@ interface Queue {
     void display();          // Method to display all elements of the queue
 }
 
-// Queue Implementation using an array
+// Queue Implementation using a simple array (Linear Queue)
 class QueueImplementation implements Queue {
     private int[] queueArray;  // Array to hold queue elements
-    private int front, rear, size, capacity;
+    private int front, rear, capacity;
 
     public QueueImplementation(int capacity) {
         this.capacity = capacity;
         this.queueArray = new int[capacity];
         this.front = 0;
         this.rear = -1;
-        this.size = 0;
     }
 
     // Enqueue operation to add an element at the rear of the queue
     @Override
     public void enqueue(int item) {
-        if (size == capacity) {
+        if (rear == capacity - 1) {
             System.out.println("Queue is full! Cannot enqueue " + item);
             return;
         }
-        rear = (rear + 1) % capacity;  // Circular increment
-        queueArray[rear] = item;
-        size++;
+        queueArray[++rear] = item;
         System.out.println("Enqueued: " + item);
     }
 
@@ -45,9 +42,7 @@ class QueueImplementation implements Queue {
             System.out.println("Queue is empty! Cannot dequeue.");
             return -1;  // Returning -1 for empty queue
         }
-        int item = queueArray[front];
-        front = (front + 1) % capacity;  // Circular increment
-        size--;
+        int item = queueArray[front++];
         return item;
     }
 
@@ -64,13 +59,13 @@ class QueueImplementation implements Queue {
     // Check if the queue is empty
     @Override
     public boolean isEmpty() {
-        return size == 0;
+        return front > rear;
     }
 
     // Get the size of the queue
     @Override
     public int size() {
-        return size;
+        return rear - front + 1;
     }
 
     // Display all elements of the queue
@@ -81,8 +76,8 @@ class QueueImplementation implements Queue {
             return;
         }
         System.out.print("Queue elements: ");
-        for (int i = 0; i < size; i++) {
-            System.out.print(queueArray[(front + i) % capacity] + " ");
+        for (int i = front; i <= rear; i++) {
+            System.out.print(queueArray[i] + " ");
         }
         System.out.println();
     }
@@ -148,6 +143,7 @@ public class QueueTest {
         sc.close();
     }
 }
+
 
 
 
