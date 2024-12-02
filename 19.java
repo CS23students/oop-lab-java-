@@ -1,22 +1,25 @@
 //19. Create an interface vehicle with getcolor(),getnumber(),getconsumption()methods.calculate the fuel consumption of vehicle,name and color of two-wheeler and four wheeler implement the vehicle interface
 
-// Vehicle Interface
+// Interface Vehicle
 interface Vehicle {
-    String getColor();
-    String getNumber();
-    double getConsumption(); // Method to calculate fuel consumption
+    String getColor();           // Method to get the color of the vehicle
+    String getNumber();          // Method to get the vehicle number
+    double getConsumption();     // Method to calculate fuel consumption
 }
 
-// TwoWheeler Class implementing Vehicle Interface
+// TwoWheeler Class implementing Vehicle
 class TwoWheeler implements Vehicle {
     private String color;
     private String number;
-    private double fuelConsumption; // in km per liter
+    private double distance;     // Distance traveled (in km)
+    private double fuelUsed;     // Fuel used (in liters)
 
-    public TwoWheeler(String color, String number, double fuelConsumption) {
+    // Constructor
+    public TwoWheeler(String color, String number, double distance, double fuelUsed) {
         this.color = color;
         this.number = number;
-        this.fuelConsumption = fuelConsumption;
+        this.distance = distance;
+        this.fuelUsed = fuelUsed;
     }
 
     @Override
@@ -31,20 +34,23 @@ class TwoWheeler implements Vehicle {
 
     @Override
     public double getConsumption() {
-        return fuelConsumption; // Returns fuel consumption in km/liter
+        return distance / fuelUsed;  // Return fuel consumption (km per liter)
     }
 }
 
-// FourWheeler Class implementing Vehicle Interface
+// FourWheeler Class implementing Vehicle
 class FourWheeler implements Vehicle {
     private String color;
     private String number;
-    private double fuelConsumption; // in km per liter
+    private double distance;     // Distance traveled (in km)
+    private double fuelUsed;     // Fuel used (in liters)
 
-    public FourWheeler(String color, String number, double fuelConsumption) {
+    // Constructor
+    public FourWheeler(String color, String number, double distance, double fuelUsed) {
         this.color = color;
         this.number = number;
-        this.fuelConsumption = fuelConsumption;
+        this.distance = distance;
+        this.fuelUsed = fuelUsed;
     }
 
     @Override
@@ -59,22 +65,22 @@ class FourWheeler implements Vehicle {
 
     @Override
     public double getConsumption() {
-        return fuelConsumption; // Returns fuel consumption in km/liter
+        return distance / fuelUsed;  // Return fuel consumption (km per liter)
     }
 }
 
-// Main Class to test the implementation
+// Main Class to Test
 public class VehicleTest {
     public static void main(String[] args) {
-        // Create a TwoWheeler object
-        Vehicle bike = new TwoWheeler("Red", "BIKE123", 40.0);
+        // Creating a Two-Wheeler instance
+        TwoWheeler bike = new TwoWheeler("Red", "TN45-B1234", 150, 5);
         System.out.println("Two-Wheeler Details:");
         System.out.println("Color: " + bike.getColor());
         System.out.println("Number: " + bike.getNumber());
         System.out.println("Fuel Consumption: " + bike.getConsumption() + " km/l");
 
-        // Create a FourWheeler object
-        Vehicle car = new FourWheeler("Blue", "CAR456", 15.0);
+        // Creating a Four-Wheeler instance
+        FourWheeler car = new FourWheeler("Blue", "TN01-C5678", 400, 25);
         System.out.println("\nFour-Wheeler Details:");
         System.out.println("Color: " + car.getColor());
         System.out.println("Number: " + car.getNumber());
@@ -83,13 +89,15 @@ public class VehicleTest {
 }
 
 
+
 // OUTPUT
 // Two-Wheeler Details:
 // Color: Red
-// Number: BIKE123
-// Fuel Consumption: 40.0 km/l
+// Number: TN45-B1234
+// Fuel Consumption: 30.0 km/l
 
 // Four-Wheeler Details:
 // Color: Blue
-// Number: CAR456
-// Fuel Consumption: 15.0 km/l
+// Number: TN01-C5678
+// Fuel Consumption: 16.0 km/l
+
