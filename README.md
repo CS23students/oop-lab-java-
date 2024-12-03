@@ -56,6 +56,12 @@ Link to the SpreadSheet - [Link](https://docs.google.com/spreadsheets/d/1hk7X0rE
 | 46 | Exception rethrowing between classes | [Link](https://github.com/CS23students/oop-lab-java-/blob/main/46.java) |
 | 47 | Complex number addition and day-to-month conversion | [Link](https://github.com/CS23students/oop-lab-java-/tree/main/47) |
 | 48 | Generic class operations on arrays | [Link](https://github.com/CS23students/oop-lab-java-/blob/main/48.java) |
+| 49 | Calculate tax based on income | [Link](https://github.com/CS23students/oop-lab-java-/blob/main/49.java) |
+| 50 | Employee Payroll | [Link](https://github.com/CS23students/oop-lab-java-/blob/main/50.java) |
+| 51 | Length Converter | [Link](https://github.com/CS23students/oop-lab-java-/blob/main/51.java) |
+| 52 | Vehicle Fuel Consumption | [Link](https://github.com/CS23students/oop-lab-java-/blob/main/52.java) |
+
+
 
 ## Contributing
 Feel free to fork the repository and submit pull requests for improvements and additional examples.
